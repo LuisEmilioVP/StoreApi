@@ -4,10 +4,10 @@ namespace StoreApi.Interfaces
 {
     public interface IProductRepository
     {
-        Task<IEnumerable<Product>> GetAllAsync();
-        Task<Product> GetByIdAsync(int id);
-        Task<Product> AddAsync(Product product);
-        Task<Product> UpdateAsync(Product product);
-        Task DeleteAsync(int id);
+        Task<IEnumerable<Product>> GetAllAsyncProduct();
+        Task<Product> GetByIdAsyncProduct(int id);
+        Task<Product> AddAsyncProduct(Product product);
+        Task<Product> UpdateAsyncProduct(Product product);
+        Task DeleteAsyncProduct(int id);
     }
 }

@@ -14,34 +14,34 @@ namespace StoreApi.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Product>> GetAllAsync()
+        public async Task<IEnumerable<Product>> GetAllAsyncProduct()
         {
             return await _context.Products.ToListAsync();
         }
 
-        public async Task<Product> GetByIdAsync(int id)
+        public async Task<Product> GetByIdAsyncProduct(int id)
         {
             return await _context.Products.FindAsync(id);
         }
 
-        public async Task<Product> AddAsync(Product product)
+        public async Task<Product> AddAsyncProduct(Product product)
         {
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
             return product;
         }
 
-        public async Task<Product> UpdateAsync(Product product)
+        public async Task<Product> UpdateAsyncProduct(Product product)
         {
             _context.Entry(product).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return product;
         }
-
-        public async Task DeleteAsync(int id)
+    
+        public async Task DeleteAsyncProduct(int id)
         {
             var product = await _context.Products.FindAsync(id);
-            if (product != null)
+            if ( product != null )
             {
                 _context.Products.Remove(product);
                 await _context.SaveChangesAsync();
